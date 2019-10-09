@@ -15,7 +15,7 @@ knitr::opts_chunk$set(echo = TRUE, eval = F, include = T)
 
 This lesson provides a very brief introduction to the shell for new users, or a 
 quick refresher for those who have used it before. It also provides additional
-resources 
+resources. 
 
 #### What does this lesson not cover?
 
@@ -24,8 +24,8 @@ short lesson.
 
 #### Objectives
 
-+ Describe key reasons for learning shell.
-+ Navigate your file system using the command line.
++ Describe key reasons for learning shell
++ Navigate your file system using the command line
 + Copy and move files using the command line
 + Understand the basics of remote computers
 + Download files from the internet using the command line
@@ -54,7 +54,7 @@ There are many reasons to learn about the shell:
 or have extra capabilities in the command line version that are not available in
 the GUI. This is true, for example, of BLAST, which offers many advanced 
 functions only accessible to users who know how to use a shell.
-+ The shell makes your work less boring. In bioinformatics you often need to do 
++ The shell makes your work less time-consuming. In bioinformatics you often need to do 
 the same set of tasks with a large number of files. Learning the shell will 
 allow you to automate those repetitive tasks and leave you free to do more 
 exciting things.
@@ -72,17 +72,17 @@ remote computers or cloud computing, which can only be accessed through a shell.
 
 ## Navigating files and directories
 
-The part of the operating system responsible for managing files and directories is called the file system. It organizes our data into files, which hold information, and directories (also called ‘folders’), which hold files or other directories.
+The part of the operating system responsible for managing files and directories is called the **file system.** It organizes our data into **files**, which hold information, and **directories** (also called ‘folders’), which hold files or other directories.
 
 Several commands are frequently used to create, inspect, rename, and delete files and directories. To start exploring them, we’ll go to our open shell window.
 
-First let’s find out where we are by running a command called pwd (which stands for ‘print working directory’). Directories are like places - at any time while we are using the shell we are in exactly one place, called our current working directory. Commands mostly read and write files in the current working directory, i.e. ‘here’, so knowing where you are before running a command is important. pwd shows you where you are:
+First let’s find out where we are by running a command called `pwd` (which stands for ‘print working directory’). Directories are like places - at any time while we are using the shell we are in exactly one place, called our current working directory. Commands mostly read and write files in the current working directory, i.e. ‘here’, so knowing where you are before running a command is important. **pwd shows you where you are**:
 
 ```{bash}
 pwd
 ```
 
-You will see something like `/Users/tr`, which is tr’s home directory.
+You will see something like `/Users/tr`, which is tr’s **home directory**.
 
 To understand what a ‘home directory’ is, let’s have a look at how the file 
 system as a whole is organized. 
@@ -91,7 +91,7 @@ On my computer, the file system looks like this:
 
 ![](_static/root.png)
 
-At the top is the root directory that holds everything else. We refer to it 
+At the top is the **root directory** that holds everything else. We refer to it 
 using a slash character, /, on its own; this is the leading slash in /Users/tr.
 
 Inside that directory are several other directories: `bin` (which is where some 
@@ -120,8 +120,8 @@ This corresponds to the files that are in my home directory:
 
 ![](_static/homedir.png)
 
-ls prints the names of the files and directories in the current directory. We 
-can get more information from `ls` by using the `-l` flag, which tells `ls`
+**ls prints the names of the files and directories in the current directory**. We 
+can get more information from `ls` by using the `-l` **flag**, which tells `ls`
 to List the files in long format.
 
 ```{bash}
@@ -151,7 +151,7 @@ drwxr-xr-x  30 tr  staff   960B Sep 26 08:53 projects/
 ```
 
 
-To get help with a command, you can either google it, or use the `man` command:
+**To get help** with a command, you can either google it, or use the `man` command:
 
 ```{bash}
 man ls
@@ -168,17 +168,17 @@ dissect into its component parts:
 ```
 ls -l /
 ```
-ls is the command, with an option `-l` and an argument `/`. We’ve already
-encountered flag which either start with a single dash (`-`) or two dashes 
-(`--`), and they change the behaviour of a command. Arguments tell the command
-what to operate on (e.g. files and directories). Sometimes options and arguments
+`ls` is the **command**, with an **option** `-l` and an **argument** `/`. We’ve already
+encountered **flags** which either start with a single dash (`-`) or two dashes 
+(`--`), and they change the behaviour of a command. **Arguments tell the command
+what to operate on** (e.g. files and directories). Sometimes options and arguments
 are referred to as parameters. A command can be called with more than one option 
 and more than one argument: but a command doesn’t always require an argument or
 an option.
 
-Each part is separated by spaces: if you omit the space between `ls` and `-l` 
+Each part is separated by **spaces**: if you omit the space between `ls` and `-l` 
 the shell will look for a command called ls-F, which doesn’t exist. Also, 
-capitalization can be important: `ls -`` is different from `ls -L`.
+**capitalization** can be important: `ls -` is different from `ls -L`.
 
 Putting all that together, our command above gives us a listing of files and 
 directories in the root directory `/`. 
@@ -186,8 +186,8 @@ directories in the root directory `/`.
 #### Moving around
 
 We now know how to tell where we are (`pwd`) and see what files are in our 
-current directory (`ls`). What if we want to move directories? We can use the 
-command `cd`, which means "change directory", to move around. 
+current directory (`ls`). What if we want to move directories? **We can use the 
+command `cd`, which means "change directory"**, to move around. 
 
 Let's move into our root directory:
 
@@ -215,7 +215,7 @@ cd ~
 
 ## Working with files and directories
 
-Let's create a directory in our home directory that will contain files from this
+Let's **create a directory** in our home directory that will contain files from this
 tutorial:
 
 ```{bash}
@@ -247,7 +247,7 @@ ls
 ```
 
 If we decide we don't like our file name at some later point, we can use the
-`mv` command, which stands for move, to move our file to a new name:
+`mv` command, which stands for move, to move our file to a **new name**:
 
 ```{bash}
 mv my_file.txt file.txt
@@ -257,7 +257,7 @@ mv my_file.txt file.txt
 ls
 ```
 
-We can also create a copy of our file using the `cp` command:
+We can also **create a copy of our file using the `cp` command**:
 
 ```{bash}
 cp file.txt file2.txt
@@ -269,7 +269,7 @@ ls
 
 ## Introduction to remote computers and the cloud
 
-The cloud is basically lots of servers (think big computers) stacked together 
+**The cloud** is basically lots of servers (think big computers) stacked together 
 in a giant, powerful infrastructure. You can borrow part of this infrastructure
 for your computing needs.
 
@@ -282,14 +282,14 @@ else.
 
 
 In either case, when using a remote computer, the computer is assigned what is 
-called an IP address. You can think of this like a mailing address for a
+called an **IP address**. You can think of this like a mailing address for a
 computer -- it unambiguously demarcates where the computer is, and allows people
 who know the address to find it. 
 
 Just like when you open your laptop (or go to the library and use a public
 computer), you need to log on to a cloud computer to be able to access it. 
-The command `ssh` (secure shell) tells your computer to look for the remote 
-computer at it's specific address, and if you are a user with the right 
+**The command `ssh` (secure shell) tells your computer to look for the remote 
+computer at it's specific address**, and if you are a user with the right 
 permission, login. 
 
 Some cloud computers allow the use of passwords for logging in while others
@@ -297,7 +297,7 @@ require what's called a key file. Just like doors that lock have both a lock
 and a key, key files come with both a public (the lock) and private (the key)
 file. Like a doorknob, the lock is public facing and anyone with the address
 can see it. However, only someone with the specific key for the specific lock
-can unlock the door and get into the computer. For more on keys files and how
+can unlock the door and get into the computer. For more on **key files** and how
 to create them, see this 
 [lesson](http://swcarpentry.github.io/shell-extras/02-ssh/).
 
@@ -305,7 +305,7 @@ to create them, see this
 
 #### Downloading files from the internet
 
-There are two programs that will download data from a remote server to your local
+There are two programs that will **download data from a remote server** to your local
 (or remote) machine: `wget` and `curl`. They were designed to do slightly different
 tasks by default, so you'll need to give the programs somewhat different options to get
 the same behaviour, but they are mostly interchangeable.
@@ -315,11 +315,11 @@ the same behaviour, but they are mostly interchangeable.
 + `cURL` is a pun, it is supposed to be read as "see URL", so its basic function
 is to *display* webpages or data at a web address.
 
-Which one you need to use mostly depends on your operating system, as most computers will
-only have one or the other installed by default.
+Which one you need to use mostly depends on your operating system, as **most computers will
+only have one or the other** installed by default.
 
 Let's say you want to download some data from Ensembl. We're going to download a very small
-tab-delimited file that just tells us what data is available on the Ensembl bacteria server.
+tab-delimited file that tells us what data is available on the Ensembl bacteria server.
 Before we can start our download, we need to know whether we're using `curl` or `wget`.
 
 To see which program you have, type:
@@ -363,7 +363,7 @@ Using `ls`, we can see that our download was successful:
 ls
 ```
 
-However, now we want to inspect the contents of the file. We will learn four
+However, now we want to **inspect the contents of the file**. We will learn four
 commands to do this.
 
 First, let's use `cat` to look at the contents
@@ -377,28 +377,28 @@ how do I make it stop!
 
 Type `ctrl` + `c` to end any command that is running in the shell.
 
-We can use the `head` command to look at only the first 10 lines:
+We can use the `head` command to look at only the **first 10 lines**:
 
 ```{bash}
 head species_EnsemblBacteria.txt
 ```
 
-Similarly, we can use `tail` to look at only the last 10 lines:
+Similarly, we can use `tail` to look at only the **last 10 lines**:
 ```{bash}
 tail species_EnsemblBacteria.txt
 ```
 
-Lastly, we can use `less` to get a scrollable view:
+Lastly, we can use `less` to get a **scrollable** view:
 ```{bash}
 less species_EnsemblBacteria.txt
 ```
 
-Use `q` to exit out of this viewer.
+**Use `q` to exit** out of this viewer.
 
 #### Transferring files from a local computer to a remote machine
 
-We use a another "secure" command, `scp`, to copy files from a local machine to a 
-remote machine, or vice versa. This command is run from your *local* computer
+We use a another "secure" command, `scp`, to **copy files from a local machine to a 
+remote machine, or vice versa**. This command is run from your *local* computer
 (i.e. from your laptop). 
 
 The scp command looks like this:
@@ -407,7 +407,7 @@ The scp command looks like this:
 scp <file I want to move> <where I want to move it>
 ```
 
-If we assume we want to transfer files from a remote computer to our local 
+If we assume we want to transfer files **from a remote computer** to our local 
 computer, this would look something like this:
 
 ```{bash, eval = F}
@@ -418,7 +418,7 @@ The first part of the command is the address for your remote computer. If you
 were using this command, you would replace `username` and `ipaddress` with your
 username and your cloud computers ip address.
 
-The second part starts with a `:` and then gives the absolute path of the files 
+The second part starts with a `:` and then gives the **absolute path** of the files 
 you want to transfer from your remote computer. 
 
 The third part of the command gives the absolute path of the location you want 
